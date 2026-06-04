@@ -1,5 +1,7 @@
 package application;
 
+import model.dao.DaoFactory;
+import model.dao.SellerDao;
 import model.entities.Departament;
 import model.entities.Seller;
 
@@ -10,6 +12,9 @@ public class Main {
         Departament dp = new Departament(123, "Financeiro");
 
         Seller sl = new Seller(123,"Pedro", "pedro@gmail.com", new Date(), 20000.0, dp);
+
+        SellerDao sellerDao = DaoFactory.createSellerDao();
+
         System.out.println(dp);
         System.out.println(sl);
     }
